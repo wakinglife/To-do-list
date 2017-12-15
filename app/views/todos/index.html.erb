@@ -1,45 +1,44 @@
 
 <div class="container">
 <div class="row" id="todo-list">
-<!-- <div class="col-md-12"> -->
-<center>
-  <table align="center", class="table table-striped table-bordered ">
+
+
+<table align="center", class="table table-bordered ">
 
  <tbody>
- <% @todos.each do |todo| %>
  <tr>
-        <th scope="row"></th>
+    <td></td>
+    <td></td>
+    <td>Task</td>
+    <td>Due Date</td>
+    <td>Details</td>
+    <td>Edit</td>
+    <td>Delete</td>
+ </tr>
 
 
+        <% @todos.each do |todo| %>
 
 
+             <tr>
+                <th scope="row"></th>
 
-     <td><%= check_box("tag", tag.id) %></td>
-    <!-- <td><%= check_box_tag todo.id, true ,checked = todo.done,disabled: true %></td> -->
+                 <td><%= check_box("tag", tag.id) %></td>
 
-     <td><%= todo.name %></td>
-     <td><%= todo.due_date%></td>
-     <td class="text-center"><a href=<%= todo_path(todo) %>><span class="glyphicon glyphicon-list-alt"></span></a></td>
-     <td class="text-center"><a href=<%= edit_todo_path(todo) %>><span class="glyphicon glyphicon-edit"></span></a></td>
-     <td class="text-center"><a href=<%= todo_path(todo) %> <span class="glyphicon glyphicon-trash"></span></a></td>
+                 <td><%= todo.name %></td>
+                 <td><%= todo.due_date%></td>
 
-
-
-     <td><%= link_to '.', todo_path(todo), method: :delete, data:{ confirm: "Are you sure?" } %></td>
-
-
+                 <td><%= link_to '<span class="glyphicon glyphicon-list-alt"></span>'.html_safe, todo_path(todo), class: "btn btn-default" %></td>
+                 <td><%= link_to '<span class="glyphicon glyphicon-edit"</span>'.html_safe, edit_todo_path(todo), class: "btn btn-default" %></td>
+                 <td><%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, todo_path(todo),method: :delete, data:{ confirm: "Are you sure ?"}, class: "btn btn-default" %></td>
            </tr>
-           <% end %>
-         </tbody>
-       </table>
+        <% end %>
+        </tbody>
+      </table>
 
-
-
-
+    </div>
    </div>
-   </div>
- </div>
- <td><%= link_to 'New Task', new_todo_path, class: "btn btn-primary" %></td>
+
+<div>
+<td><%= link_to 'New Task', new_todo_path, class: "btn btn-primary" %></td>
 </div>
-</table>
-</center>

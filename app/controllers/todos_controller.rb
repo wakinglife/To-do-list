@@ -1,7 +1,3 @@
-
-
-
-
 class TodosController < ApplicationController
   before_action :set_todo, :only => [:show, :edit, :update, :destroy]
 
@@ -13,8 +9,9 @@ class TodosController < ApplicationController
   def new
     @todo = Todo.new
   end
+
   def create
-      @todo = Todo.new(todo_params)
+    @todo = Todo.new(todo_params)
     #  @todo.is_completed = false
       if @todo.save
         redirect_to todos_url
@@ -24,7 +21,6 @@ class TodosController < ApplicationController
     end
 
     def update
-
       if @todo.update_attributes(todo_params)
         redirect_to todo_path(@todo)
       else
@@ -43,28 +39,13 @@ class TodosController < ApplicationController
       end
     end
 
-    def is_check
-      @todo.update(check: !(@todo.check))
-    end
+    # def done
+    #     @todo.update_attributes(done: !(@todo.done))
+    #    redirect_to todo_url
+    # end
+ end
 
-    def done
-
-        @todo.done = true
-        @todo.save
-
-        redirect_to todos_path
-      end
-
-      def not_yet
-
-        @todo.done = false
-        @todo.save
-
-        redirect_to todos_path
-      end
-
-
-    private
+  private
     def set_todo
       @todo = Todo.find(params[:id])
     end
@@ -73,6 +54,3 @@ class TodosController < ApplicationController
     def todo_params
       params.require(:todo).permit(:name, :due_date, :note, :done)
     end
-
-
-end

@@ -16,20 +16,18 @@
  @import 'bootstrap';
 
 
+
+
  // =============normal setting============
 
  * {
-   // border: solid 1px black;
-   font-family: 'Courier New', cursive;
+   font-family: 'Courier', cursive;
  }
 
- @font-face {
-   font-family: 'Courier New', cursive;
 
- }
 
  body {
-   background-color: 	#ACD6FF;
+   background-color: 	#9EE6E1;
 
  }
 
@@ -51,25 +49,27 @@
  // ===============index page===============
 
 
+.table {
+  width: 300 px;
+  height: 800 px;
 
-
-
+}
 
 
 
  .due_date {
-   font-size: 30px;
+   font-size: 20px;
    margin-bottom: 0;
  }
 
  .name {
    font-weight: bold;
-   font-size: 30px;
+   font-size: 20px;
    margin-bottom: 0;
  }
 
  .note {
-   font-size: 30px;
+   font-size: 20px;
    margin-bottom: 0;
  }
 
@@ -85,6 +85,11 @@
    height: 1.5px;
 
    background-color: #DEE5DE;
+ }
+
+ .btn btn-primary {
+   color: #9EE6E1;
+   background-color: white;
  }
 
  // ================partial page==============
@@ -104,14 +109,14 @@
  }
 
  .itembox {
-   width: 400px;
+   width: 700px;
    background-color: #f3ffbd;
    box-shadow: 3px 3px 8px rgba(0,0,0,.5);
    border: solid 2px grey;
    margin: 0 auto;
    text-align: center;
    padding: 20px 0;
-   font-size: 20px;
+   font-size: 14px;
  }
 
 
